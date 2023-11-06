@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-seri f;
+  background-color: rgb(230, 230, 230);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+}
+
+.title {
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: gray;
+}
+
+ul li button {
+  width: 80px;
+  height: 30px;
+  color: gray;
+  margin-top: -10px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  padding: 0 40px;
+  height: 410px;
+}
+
+.box-title {
+  font-size: 20px;
+  width: 50%;
+}
+
+.box-image {
+  width: 10px;
+  margin: 0 150px;
+}
+
+.box-image img {
+  width: 400px;
+}
+
+/* hamburger menu */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 45px;
+  height: 28px;
+  left: -8px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  border-radius: 4px;
+  transition: all 0.8s;
+}
+
+/* hamburger menu animetion */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: gray;
+  transform: rotate(45deg) translate(-3px, 1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  background-color: gray;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: gray;
+  transform: rotate(-45deg) translate(-3px, 0);
+}
+
+/* Responsive */
+
+/* Ukuran Tablet */
+@media screen and(max-width: 900px) {
+
+}
+/* ukuran mobile */
+@media screen and (max-width: 700px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 40vh;
+    width: 30%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    z-index: -1;
+    transform: translatey(-100%);
+    transition: all 0.5s;
+    margin-top: 50px;
+  }
+
+  nav ul.slide {
+    transform: translate(0);
+  }
+
+  ul li button {
+    margin-top: -10px;
+    border: none;
+    background-color: transparent;
+  }
+}
